@@ -44,9 +44,8 @@ const chapterAmbassadorRoutes = require(
 );
 const teamRoutes = require("./routes/teamRoutes");
 const videoRoutes = require("./routes/videoRoutes");
-const summitRoutes = require(
-  "./routes/summitRoutes"
-);
+const summitRoutes = require("./routes/summitRoutes");
+const gfetscRoutes = require("./routes/gfetscRoute");
 const blogRoutes = require("./routes/blogRoutes");
 const contactRoutes = require(
   "./routes/contactRoutes"
@@ -61,6 +60,7 @@ app.use(
 app.use("/api/team", teamRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/summits", summitRoutes);
+app.use("/api/gfetsc", gfetscRoutes);
 app.use("/api/blog", blogRoutes);
 app.use(
   "/api/contact",
