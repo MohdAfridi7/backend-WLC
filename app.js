@@ -42,6 +42,10 @@ const applicationRoutes = require("./routes/applicationRoutes");
 const chapterAmbassadorRoutes = require(
   "./routes/chapterAmbassadorRoutes"
 );
+const WLCteamRoutes = require("./routes/WLCteamRoutes");
+const WLCchapterAmbassadorRoutes = require(
+  "./routes/WLCchapterAmbassadorRoutes"
+);
 const teamRoutes = require("./routes/teamRoutes");
 const videoRoutes = require("./routes/videoRoutes");
 const summitRoutes = require("./routes/summitRoutes");
@@ -50,6 +54,8 @@ const blogRoutes = require("./routes/blogRoutes");
 const contactRoutes = require(
   "./routes/contactRoutes"
 );
+const WLCblogRoutes = require("./routes/WLCblogRoutes");
+
 
 app.use("/api/admin", adminRoutes);
 app.use("/api/application", applicationRoutes);
@@ -58,14 +64,21 @@ app.use(
   chapterAmbassadorRoutes
 );
 app.use("/api/team", teamRoutes);
+app.use(
+  "/api/wlc-chapter-ambassador",
+  WLCchapterAmbassadorRoutes
+);
+app.use("/api/wlc-team", WLCteamRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/summits", summitRoutes);
 app.use("/api/gfetsc", gfetscRoutes);
 app.use("/api/blog", blogRoutes);
+
 app.use(
   "/api/contact",
   contactRoutes
 );
+app.use("/api/wlc-blog", WLCblogRoutes);
 
 /* =======================
    Home Route
