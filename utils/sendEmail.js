@@ -1,12 +1,13 @@
 const transporter = require("../config/email");
 
-const sendEmail = async ({ to, subject, html }) => {
+const sendEmail = async ({ to, subject, html, attachments }) => {
   try {
     const info = await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to,
       subject,
       html,
+      attachments,
     });
 
     console.log("Email Sent:", info.messageId);
