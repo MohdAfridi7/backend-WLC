@@ -30,6 +30,15 @@ const applicationSchema = new mongoose.Schema(
     message: {
       type: String,
     },
+    council: {
+      type: String,
+      required: true,
+    },
+    membershipType: {
+      type: String,
+      enum: ["Individual", "Institutional"],
+      required: true,
+    },
     resumeUrl: {
       type: String,
       required: true,

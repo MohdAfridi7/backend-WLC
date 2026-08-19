@@ -13,6 +13,8 @@ exports.submitApplication = async (req, res) => {
       designation,
       country,
       message,
+      council,
+      membershipType,
     } = req.body;
 
     if (!req.file) {
@@ -44,6 +46,8 @@ exports.submitApplication = async (req, res) => {
       designation,
       country,
       message,
+      council,
+      membershipType,
       resumeUrl: uploadedResume.secure_url,
       resumePublicId: uploadedResume.public_id,
     });
@@ -120,6 +124,24 @@ exports.submitApplication = async (req, res) => {
               </td>
               <td style="padding: 10px; border: 1px solid #ddd;">
                 ${country || "N/A"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 10px; border: 1px solid #ddd;">
+                <strong>Type of Membership</strong>
+              </td>
+              <td style="padding: 10px; border: 1px solid #ddd;">
+                ${membershipType || "N/A"}
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 10px; border: 1px solid #ddd;">
+                <strong>Council</strong>
+              </td>
+              <td style="padding: 10px; border: 1px solid #ddd;">
+                ${council || "N/A"}
               </td>
             </tr>
 
@@ -263,4 +285,3 @@ exports.deleteApplication = async (req, res) => {
     });
   }
 };
-
